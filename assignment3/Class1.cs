@@ -118,6 +118,7 @@ namespace assignment3
                     case 1://Insertion sort
                         if (all == true)
                         {
+                            Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine("Case 1");
                             goto case 2;
                         }
@@ -131,6 +132,7 @@ namespace assignment3
                         if (all == true)
                         {
                             Console.WriteLine("Case 2");
+                            Console.ResetColor();
                             goto case 3;
                         }
                         else
