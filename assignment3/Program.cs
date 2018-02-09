@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace assignment3
@@ -10,6 +11,8 @@ namespace assignment3
     {
         static void Main(string[] args)
         {
+            NewInput a = new NewInput();
+            a.Sort();
         }
     }
 }
