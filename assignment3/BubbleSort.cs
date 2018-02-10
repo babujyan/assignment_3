@@ -9,24 +9,24 @@ namespace assignment3
     public static class BubbleSort
     {
 
-        public static int[] Sort(initArr arr)
+        public static int[] Sort(InitArr arr)
         {
-            int[] bubbleArr = arr.Arr();
-            int size = bubbleArr.Length;
-            for (int i = 0; i < bubbleArr.Length; i++)
+            int[] array = arr.Arr();
+            int size = array.Length;
+            for (int i = 0; i < array.Length; i++)
             {
                 for (int j = 0; j < size-1; j++)
                 {
-                    if (bubbleArr[j] > bubbleArr[j + 1])
+                    if (array[j] > array[j + 1])
                     {
-                        bubbleArr[j + 1] = bubbleArr[j + 1] + bubbleArr[j];
-                        bubbleArr[j] = bubbleArr[j + 1] - bubbleArr[j];
-                        bubbleArr[j + 1] = bubbleArr[j + 1] - bubbleArr[j];
+                        array[j + 1] = array[j + 1] + array[j];
+                        array[j] = array[j + 1] - array[j];
+                        array[j + 1] = array[j + 1] - array[j];
                     }
                 }
                 size--;
             }
-            return bubbleArr;
+            return array;
         }
     }
 }

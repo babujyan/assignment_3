@@ -12,7 +12,7 @@ namespace assignment3
         
         List<int> sortingNumber = new List<int>();
         int[] sortingNumberArr;
-        initArr arr;
+        InitArr arr;
         string userInput;
         bool all = false;
 
@@ -21,7 +21,7 @@ namespace assignment3
 
             Console.WriteLine("Please enter the size of an array");
             this.userInput = Console.ReadLine();
-            arr = new initArr(Int32.Parse(userInput));
+            arr = new InitArr(Int32.Parse(userInput));
             Console.WriteLine("Please enter the sorting algoritm \n " +
                     "•1 Insertion sort " +
                     "\n •2 Bubble sort " +
@@ -120,11 +120,13 @@ namespace assignment3
                         {
                             Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine("Insertion sort");
+                            InsertionSort.Sort(arr);
                             goto case 2;
                         }
                         else 
                         {
                             Console.WriteLine("Insertion sort");
+                            InsertionSort.Sort(arr);
                             break;
                         }
 
@@ -133,7 +135,6 @@ namespace assignment3
                         {
                             Console.WriteLine("Bubble sort");
                             BubbleSort.Sort(arr);
- 
                             Console.ResetColor();
 
                             goto case 3;
@@ -149,11 +150,13 @@ namespace assignment3
                         if (all == true)
                         {
                             Console.WriteLine("Quick sort");
+                            QuickSort.Sort(arr);
                             goto case 4;
                         }
                         else
                         {
                             Console.WriteLine("Quick sort");
+                            QuickSort.Sort(arr);
                             break;
                         }
 
@@ -161,16 +164,19 @@ namespace assignment3
                         if (all == true)
                         {
                             Console.WriteLine("Heap sort");
+                            HeapSort.Sort(arr);
                             goto case 5;
                         }
                         else
                         {
                             Console.WriteLine("Heap sort");
+                            QuickSort.Sort(arr);
                             break;
                         }
 
                     case 5: //Merge sort
                         Console.WriteLine("Merge sort");
+                        MergeSort.Sort(arr);
                         all = false;
                         break;
 

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace assignment3
 {
-    public struct initArr
+    public struct InitArr
     {
         int[] inputArr;
-        public initArr(int size)
+        public InitArr(int size)
         {
             this.inputArr = new int[size];
             Random random = new Random();
