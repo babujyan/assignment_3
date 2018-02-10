@@ -20,5 +20,9 @@ namespace assignment3
             }
 
         }
+        public int[] Arr()
+        {
+            return this.inputArr;
+        }
     }
 }

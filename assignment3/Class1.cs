@@ -9,10 +9,10 @@ namespace assignment3
 {
     class NewInput
     {
+        
         List<int> sortingNumber = new List<int>();
         int[] sortingNumberArr;
-        bool secondFormat = false;
-
+        initArr arr;
         string userInput;
         bool all = false;
 
@@ -21,7 +21,7 @@ namespace assignment3
 
             Console.WriteLine("Please enter the size of an array");
             this.userInput = Console.ReadLine();
-            initArr a = new initArr(Int32.Parse(userInput));
+            arr = new initArr(Int32.Parse(userInput));
             Console.WriteLine("Please enter the sorting algoritm \n " +
                     "•1 Insertion sort " +
                     "\n •2 Bubble sort " +
@@ -119,53 +119,56 @@ namespace assignment3
                         if (all == true)
                         {
                             Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine("Case 1");
+                            Console.WriteLine("Insertion sort");
                             goto case 2;
                         }
                         else 
                         {
-                            Console.WriteLine("Case 1");
+                            Console.WriteLine("Insertion sort");
                             break;
                         }
 
                     case 2: //Bubble sort
                         if (all == true)
                         {
-                            Console.WriteLine("Case 2");
+                            Console.WriteLine("Bubble sort");
+                            BubbleSort.Sort(arr);
+                           
                             Console.ResetColor();
+
                             goto case 3;
                         }
                         else
                         {
-                            Console.WriteLine("Case 2");
+                            Console.WriteLine("Bubble sort");
                             break;
                         }
                     case 3: //Quick sort
                         if (all == true)
                         {
-                            Console.WriteLine("Case 3");
+                            Console.WriteLine("Quick sort");
                             goto case 4;
                         }
                         else
                         {
-                            Console.WriteLine("Case 3");
+                            Console.WriteLine("Quick sort");
                             break;
                         }
 
                     case 4: //Heap sort
                         if (all == true)
                         {
-                            Console.WriteLine("Case 4");
+                            Console.WriteLine("Heap sort");
                             goto case 5;
                         }
                         else
                         {
-                            Console.WriteLine("Case 4");
+                            Console.WriteLine("Heap sort");
                             break;
                         }
 
                     case 5: //Merge sort
-                        Console.WriteLine("Case 5");
+                        Console.WriteLine("Merge sort");
                         all = false;
                         break;
 

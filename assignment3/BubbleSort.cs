@@ -6,7 +6,31 @@ using System.Threading.Tasks;
 
 namespace assignment3
 {
-    class BubbleSort
+    public static class BubbleSort
     {
+
+        public static int[] Sort(initArr arr)
+        {
+            int[] bubbleArr = arr.Arr();
+            int size = bubbleArr.Length;
+            for (int i = 0; i < bubbleArr.Length; i++)
+            {
+                for (int j = 0; j < size-1; j++)
+                {
+                    if (bubbleArr[j] > bubbleArr[j + 1])
+                    {
+                        bubbleArr[j + 1] = bubbleArr[j + 1] + bubbleArr[j];
+                        bubbleArr[j] = bubbleArr[j + 1] - bubbleArr[j];
+                        bubbleArr[j + 1] = bubbleArr[j + 1] - bubbleArr[j];
+                    }
+                }
+                size--;
+            }
+            for(int i=0; i< bubbleArr.Length;i++)
+            {
+                Console.WriteLine(bubbleArr[i]);
+            }
+            return bubbleArr;
+        }
     }
 }
