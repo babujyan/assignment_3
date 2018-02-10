@@ -26,10 +26,6 @@ namespace assignment3
                 }
                 size--;
             }
-            for(int i=0; i< bubbleArr.Length;i++)
-            {
-                Console.WriteLine(bubbleArr[i]);
-            }
             return bubbleArr;
         }
     }

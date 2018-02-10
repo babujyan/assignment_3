@@ -133,14 +133,16 @@ namespace assignment3
                         {
                             Console.WriteLine("Bubble sort");
                             BubbleSort.Sort(arr);
-                           
+ 
                             Console.ResetColor();
 
                             goto case 3;
                         }
                         else
                         {
+                            BubbleSort.Sort(arr);
                             Console.WriteLine("Bubble sort");
+
                             break;
                         }
                     case 3: //Quick sort
