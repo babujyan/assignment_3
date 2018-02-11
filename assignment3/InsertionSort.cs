@@ -8,23 +8,31 @@ namespace assignment3
 {
     public static class InsertionSort
     {
-        public static int[] Sort(InitArr arr)
+        public static void Sort(InitArr arr)
         {
-            int[] array = arr.Arr();
+            int[] array = new int[arr.Arr().Length];
+            Array.Copy(arr.Arr(), array, arr.Arr().Length);
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.WriteLine(array[i]);
+            }
             int size = array.Length;
-            for(int i = 1; i < array.Length; ++i)
+            for (int i = 1; i < array.Length; ++i)
             {
                 int j = i;
-                while(j > 0 && array[j-1] > array[j])
+                while (j > 0 && array[j - 1] > array[j])
                 {
-                    array[j] = array[j] + array[j-1];
-                    array[j-1] = array[j] - array[j-1];
-                    array[j] = array[j] - array[j-1];
+                    array[j] = array[j] + array[j - 1];
+                    array[j - 1] = array[j] - array[j - 1];
+                    array[j] = array[j] - array[j - 1];
                     j--;
                 }
             }
-
-            return array;
+            Console.WriteLine("sorted");
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.WriteLine(array[i]);
+            }
         }
     }
 }

@@ -10,11 +10,11 @@ namespace assignment3
     {
         public static int[] Sort(InitArr arr)
         {
-            int[] bubbleArr = arr.Arr();
-            int size = bubbleArr.Length;
+            int[] array = new int[arr.Arr().Length];
+            Array.Copy(arr.Arr(), array, arr.Arr().Length);
 
 
-            return bubbleArr;
+            return array;
         }
     }
 }

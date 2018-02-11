@@ -9,9 +9,15 @@ namespace assignment3
     public static class BubbleSort
     {
 
-        public static int[] Sort(InitArr arr)
+        public static void Sort(InitArr arr)
         {
-            int[] array = arr.Arr();
+
+            int[] array = new int[arr.Arr().Length];
+            Array.Copy(arr.Arr(), array, arr.Arr().Length);
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.WriteLine(array[i]);
+            }
             int size = array.Length;
             for (int i = 0; i < array.Length; i++)
             {
@@ -26,7 +32,11 @@ namespace assignment3
                 }
                 size--;
             }
-            return array;
+            Console.WriteLine("sorted");
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.WriteLine(array[i]);
+            }
         }
     }
 }

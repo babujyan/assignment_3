@@ -10,8 +10,8 @@ namespace assignment3
     {
         public static int[] Sort(InitArr arr)
         {
-            int[] array = arr.Arr();
-            int size = array.Length;
+            int[] array = new int[arr.Arr().Length];
+            Array.Copy(arr.Arr(), array, arr.Arr().Length);
 
 
             return array;

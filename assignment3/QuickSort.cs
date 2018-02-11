@@ -10,7 +10,8 @@ namespace assignment3
     {
         public static int[] Sort(InitArr arr)
         {
-            int[] array = arr.Arr();
+            int[] array = new int[arr.Arr().Length];
+            Array.Copy(arr.Arr(), array, arr.Arr().Length);
             array = Partition(array, 0, array.Length - 1);
             int k = 0;
             while (k < array.Length)
@@ -48,9 +49,9 @@ namespace assignment3
                 }
             }
             if(low < pivot)
-                Partition(array, low, pivot - 1);
+                array = Partition(array, low, pivot - 1);
             if(high > pivot)
-                Partition(array, pivot + 1, high);
+                array = Partition(array, pivot + 1, high);
      
             return array;
         }
