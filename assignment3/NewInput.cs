@@ -8,6 +8,9 @@ using System.Diagnostics;
 
 namespace assignment3
 {
+    /// <summary>
+    /// 
+    /// </summary>
     class NewInput
     {
         
