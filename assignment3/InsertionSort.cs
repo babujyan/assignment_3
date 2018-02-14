@@ -3,15 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace assignment3
 {
     public static class InsertionSort
     {
+        /// <summary>
+        /// Elapsed Time 
+        /// </summary>
+        private static double elapsedTime;
+
+        /// <summary>
+        /// Used Memory
+        /// </summary>
+        private static int memory = 0;
+
+        /// <summary>
+        /// Sort function, uses the heap sort algoritm
+        /// </summary>
+        /// <param name="arr">Array of integers</param>
+        /// <returns>Returns sorted array</returns>
         public static void Sort(InitArr arr)
         {
             int[] array = new int[arr.Arr().Length];
             Array.Copy(arr.Arr(), array, arr.Arr().Length);
+
+            var watch = Stopwatch.StartNew();
+
             for (int i = 0; i < array.Length; i++)
             {
                 Console.WriteLine(array[i]);
@@ -28,11 +47,23 @@ namespace assignment3
                     j--;
                 }
             }
-            Console.WriteLine("sorted");
-            for (int i = 0; i < array.Length; i++)
+        }
+            /// <summary>
+            /// Gives elapsed time in miliseconds.
+            /// </summary>
+            /// <returns></returns>
+            public static double GetTime()
             {
-                Console.WriteLine(array[i]);
+                return elapsedTime;
             }
+
+        /// <summary>
+        /// Gives used emory in bytes.
+        /// </summary>
+        /// <returns></returns>
+        public static int GetMemory()
+        {
+            return memory;
         }
     }
 }

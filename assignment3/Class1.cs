@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace assignment3
 {
@@ -15,7 +16,9 @@ namespace assignment3
         InitArr arr;
         string userInput;
         bool all = false;
-
+        ///<sumary>
+        /// THsuajshjn ajhs 
+        ///</sumary>
         public NewInput()
         {
 
@@ -80,7 +83,7 @@ namespace assignment3
                     break;
                 }
 
-                else if (Regex.IsMatch(this.userInput, "^(([1-5][,]){1,4}?)[1-5]$"))
+                else if (Regex.IsMatch(this.userInput, "^(([1-5][,]){1,100}?)[1-5]$"))
                 {
                     Regex regex = new Regex("[,]");
                     string[] substrings = regex.Split(userInput);
@@ -170,7 +173,7 @@ namespace assignment3
                         else
                         {
                             Console.WriteLine("Heap sort");
-                            QuickSort.Sort(arr);
+                            HeapSort.Sort(arr);
                             break;
                         }
 
