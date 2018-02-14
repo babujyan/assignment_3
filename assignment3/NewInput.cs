@@ -9,7 +9,7 @@ using System.Diagnostics;
 namespace assignment3
 {
     /// <summary>
-    /// 
+    /// NewINput init user input.
     /// </summary>
     class NewInput
     {
@@ -20,7 +20,7 @@ namespace assignment3
         string userInput;
 
         ///<sumary>
-        /// 
+        /// Genert an array and ask user by which algoritm he/she wants to sort.
         ///</sumary>
         public NewInput()
         {
@@ -115,6 +115,9 @@ namespace assignment3
             while (true);
         }
 
+        /// <summary>
+        /// Sorts an array.
+        /// </summary>
         public void Sort()
         {
             double[] Time = new double[6];
@@ -170,6 +173,7 @@ namespace assignment3
             }
 
             double min = Time[1];
+            
             for(int i = 1; i <=5; i++)
             {
                 if(min > Time[i])

@@ -23,10 +23,9 @@ namespace assignment3
         private static int memory = 0;
 
         /// <summary>
-        /// Sort function, uses the Merge sort algoritm
+        /// Sort function via Merge sort.
         /// </summary>
-        /// <param name="arr">Array of integers</param>
-        /// <returns>Returns sorted array</returns>
+        /// <param name="arr"> Array with type InitAr. </param>
         public static int[] Sort(InitArr arr)
         {
             int[] array = new int[arr.Arr().Length];

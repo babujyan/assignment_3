@@ -22,7 +22,7 @@ namespace assignment3
         /// <summary>
         /// Sort function, uses the heap sort algoritm
         /// </summary>
-        /// <param name="arr">Array of integers</param>
+        /// <param name="arr"> Array with type InitAr. </param>
         /// <returns>Returns sorted array</returns>
         public static int[] Sort(InitArr arr)
         {

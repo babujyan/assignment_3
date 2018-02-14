@@ -22,8 +22,7 @@ namespace assignment3
         /// <summary>
         /// Sort function, uses the heap sort algoritm
         /// </summary>
-        /// <param name="arr">Array of integers</param>
-        /// <returns>Returns sorted array</returns>
+        /// <param name="arr"> Array with type InitAr. </param>
         public static void Sort(InitArr arr)
         {
             int[] array = new int[arr.Arr().Length];

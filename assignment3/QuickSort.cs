@@ -23,10 +23,10 @@ namespace assignment3
         private static int memory = 0;
 
         /// <summary>
-        /// 
+        /// Sort method for Quick sort.
         /// </summary>
-        /// <param name="arr"></param>
-        /// <returns></returns>
+        /// <param name="arr"> Array with type InitAr. </param>
+        /// <returns>Returns sorted array</returns>
         public static int[] Sort(InitArr arr)
         {
             
@@ -60,12 +60,12 @@ namespace assignment3
         }
 
         /// <summary>
-        /// 
+        /// Partition for Quick sort.
         /// </summary>
         /// <param name="array"> Array whic is going to be sorted. </param>
         /// <param name="low"> Lowest index for sorting. </param>
         /// <param name="high"> Highest index for sorting. </param>
-        /// <returns></returns>
+        /// <returns>Index</returns>
         private static int Partition(int[] array, int low, int high)
         {
             int pivot = array[high];
