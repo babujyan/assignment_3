@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
-
 namespace assignment3
 {
     public struct InitArr
@@ -14,8 +13,12 @@ namespace assignment3
         {
             this.inputArr = new int[size];
             Random random = new Random();
-        }
+            for (int i = 0; i < size; i++)
+            {
+                this.inputArr[i] = random.Next();
+            }
 
+        }
         public int[] Arr()
         {
             return this.inputArr;

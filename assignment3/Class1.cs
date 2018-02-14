@@ -230,6 +230,7 @@ namespace assignment3
                             Console.WriteLine("Running time: " + Time[3]);
 
                             Console.WriteLine("Memory usage: " + QuickSort.GetMemory());
+                            Console.ResetColor();
                             break;
                             
                         }

@@ -32,7 +32,7 @@ namespace assignment3
             var watch = Stopwatch.StartNew();
             
             int size = array.Length;
-            for (int i = 1; i < array.Length; ++i)
+            for (int i = 1; i < array.Length; i++)
             {
                 int j = i;
                 while (j > 0 && array[j - 1] > array[j])
@@ -43,7 +43,6 @@ namespace assignment3
                     j--;
                 }
             }
-
             watch.Stop();
             elapsedTime = watch.ElapsedTicks * (1000000.0 / Stopwatch.Frequency);
         }
