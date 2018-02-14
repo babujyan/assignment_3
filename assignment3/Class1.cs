@@ -15,9 +15,9 @@ namespace assignment3
         int[] sortingNumberArr;
         InitArr arr;
         string userInput;
-        bool all = false;
+
         ///<sumary>
-        /// THsuajshjn ajhs 
+        /// 
         ///</sumary>
         public NewInput()
         {
@@ -25,16 +25,13 @@ namespace assignment3
             Console.WriteLine("Please enter the size of an array");
             this.userInput = Console.ReadLine();
             arr = new InitArr(Int32.Parse(userInput));
-            Console.WriteLine("Please enter the sorting algoritm \n " +
-                    "•1 Insertion sort " +
-                    "\n •2 Bubble sort " +
-                    "\n •3 Quick sort " +
-                    "\n •4 Heap sort " +
-                    "\n •5 Merge sort" +
-                    "\n •6 all algorits" +
-                    "\n in one of these formats 1: 1,2... or 1-2...");
-
-
+            Console.WriteLine("Select which algorithm you want to perform: \n " +
+                    "1. Insertion sort " +
+                    "\n 2. Bubble sort " +
+                    "\n 3. Quick sort " +
+                    "\n 4. Heap sort " +
+                    "\n 5. Merge sort" +
+                    "\n 6. all");
             do
             {
                 this.userInput = Console.ReadLine();
@@ -43,8 +40,16 @@ namespace assignment3
                 {
                     if (Int32.TryParse(this.userInput, out int k))
                     {
-                        //Console.WriteLine(Int32.Parse(this.userInput));
-                        this.sortingNumber.Add(Int32.Parse(this.userInput));
+                        if(Int32.Parse(this.userInput) == 6)
+                        {
+                            for(int i = 1; i < 6;i++)
+                            {
+                                this.sortingNumber.Add(i);
+                            }
+                        }
+                        else
+                            this.sortingNumber.Add(Int32.Parse(this.userInput));
+
                         sortingNumberArr = this.sortingNumber.ToArray();
                     }
                     else Console.WriteLine("error");
@@ -91,7 +96,6 @@ namespace assignment3
                     {
                         if (Int32.TryParse(match, out int k))
                         {
-                            //Console.WriteLine(Int32.Parse(match));
                             this.sortingNumber.Add(Int32.Parse(match));
                         }
                         else Console.WriteLine("error");
@@ -108,10 +112,12 @@ namespace assignment3
             while (true);
         }
 
-        public int[] Sort()
+        public void Sort()
         {
-            
-            
+            double[] Time = new double[6];
+
+
+
             for (int i=0; i< sortingNumberArr.Length; i++)
             {
 
@@ -119,82 +125,173 @@ namespace assignment3
                 switch (caseSwitch)
                 {
                     case 1://Insertion sort
-                        if (all == true)
                         {
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine("Insertion sort");
                             InsertionSort.Sort(arr);
-                            goto case 2;
-                        }
-                        else 
-                        {
-                            Console.WriteLine("Insertion sort");
-                            InsertionSort.Sort(arr);
+                            Time[1] = InsertionSort.GetTime();
                             break;
                         }
 
                     case 2: //Bubble sort
-                        if (all == true)
-                        {
-                            Console.WriteLine("Bubble sort");
-                            BubbleSort.Sort(arr);
-                            Console.ResetColor();
-
-                            goto case 3;
-                        }
-                        else
                         {
                             BubbleSort.Sort(arr);
-                            Console.WriteLine("Bubble sort");
+                            Time[2] = BubbleSort.GetTime();
 
                             break;
                         }
                     case 3: //Quick sort
-                        if (all == true)
                         {
-                            Console.WriteLine("Quick sort");
                             QuickSort.Sort(arr);
-                            goto case 4;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Quick sort");
-                            QuickSort.Sort(arr);
+                            Time[3] = QuickSort.GetTime();
                             break;
                         }
 
                     case 4: //Heap sort
-                        if (all == true)
                         {
-                            Console.WriteLine("Heap sort");
                             HeapSort.Sort(arr);
-                            goto case 5;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Heap sort");
-                            HeapSort.Sort(arr);
+                            Time[4] = HeapSort.GetTime();
                             break;
                         }
 
                     case 5: //Merge sort
-                        Console.WriteLine("Merge sort");
-                        MergeSort.Sort(arr);
-                        all = false;
-                        break;
-
-
-                    case 6: //all
-                        Console.WriteLine("Case 6");
-                        all = true;
-                        goto case 1;
+                        {
+                            MergeSort.Sort(arr);
+                            Time[5] = MergeSort.GetTime();
+                            break;
+                        }
 
                     default:
-                        Console.WriteLine("Default case");
-                        break;
+                        {
+                            break;
+                        }
                 }
             }
-            return sortingNumberArr; 
+
+            double min = Time[1];
+            for(int i = 1; i <=5; i++)
+            {
+                if(min > Time[i])
+                {
+                    min = Time[i];
+                }
+            }
+
+            for (int i = 0; i < sortingNumberArr.Length; i++)
+            {
+
+                int caseSwitch = sortingNumber[i];
+                switch (caseSwitch)
+                {
+                    case 1://Insertion sort
+                        if (Time[1]==min)
+                        {
+
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("Insertion sort");
+                            Console.WriteLine("Running time: " + Time[1]);
+
+                            Console.WriteLine("Memory usage: " + BubbleSort.GetMemory());
+                            Console.ResetColor();
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Insertion sort");
+                            Console.WriteLine("Running time: " + Time[1]);
+
+                            Console.WriteLine("Memory usage: " + BubbleSort.GetMemory());
+                            break;
+                        }
+
+                    case 2: //Bubble sort
+                        if (Time[2] == min)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("Bubble sort");
+                            Console.WriteLine("Running time: " + Time[2]);
+                            Console.WriteLine("Memory usage: " + BubbleSort.GetMemory());
+                            Console.ResetColor();
+                            break;
+                        }
+                        else
+                        {
+
+                            Console.WriteLine("Bubble sort");
+                            Console.WriteLine("Running time: " + Time[2]);
+                            Console.WriteLine("Memory usage: " + BubbleSort.GetMemory());
+
+
+                            break;
+                        }
+                    case 3: //Quick sort
+                        if (Time[3] == min)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("Quick sort");
+                            Console.WriteLine("Running time: " + Time[3]);
+
+                            Console.WriteLine("Memory usage: " + QuickSort.GetMemory());
+                            break;
+                            
+                        }
+                        else
+                        {
+                            Console.WriteLine("Quick sort");
+                            Console.WriteLine("Running time: " + Time[3]);
+
+                            Console.WriteLine("Memory usage: " + QuickSort.GetMemory());
+
+                            break;
+                        }
+
+                    case 4: //Heap sort
+                        if (Time[4] == min)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("Heap sort");
+                            Console.WriteLine("Running time: " + Time[4]);
+
+                            Console.WriteLine("Memory usage: " + HeapSort.GetMemory());
+
+                            Console.ResetColor();
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Heap sort");
+                            Console.WriteLine("Running time: " + Time[4]);
+
+
+                            Console.WriteLine("Memory usage: " + HeapSort.GetMemory());
+                            break;
+                        }
+
+                    case 5: //Merge sort
+                        if (Time[5] == min)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("Merge sort");
+                            Console.WriteLine("Running time: " + Time[5]);
+
+                            Console.WriteLine("Memory usage: " + MergeSort.GetMemory());
+
+                            Console.ResetColor();
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Merge sort");
+                            Console.WriteLine("Running time: " + Time[5]);
+
+
+                            Console.WriteLine("Memory usage: " + MergeSort.GetMemory());
+
+                            break;
+                        }
+
+                    default:
+                        break;
+                }
+            } 
         }
     }
 }

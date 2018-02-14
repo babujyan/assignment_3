@@ -30,11 +30,7 @@ namespace assignment3
             Array.Copy(arr.Arr(), array, arr.Arr().Length);
 
             var watch = Stopwatch.StartNew();
-
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.WriteLine(array[i]);
-            }
+            
             int size = array.Length;
             for (int i = 1; i < array.Length; ++i)
             {
@@ -47,15 +43,19 @@ namespace assignment3
                     j--;
                 }
             }
+
+            watch.Stop();
+            elapsedTime = watch.ElapsedTicks * (1000000.0 / Stopwatch.Frequency);
         }
-            /// <summary>
-            /// Gives elapsed time in miliseconds.
-            /// </summary>
-            /// <returns></returns>
-            public static double GetTime()
-            {
-                return elapsedTime;
-            }
+
+        /// <summary>
+        /// Gives elapsed time in miliseconds.
+        /// </summary>
+        /// <returns></returns>
+        public static double GetTime()
+        {
+            return elapsedTime;
+        }
 
         /// <summary>
         /// Gives used emory in bytes.

@@ -33,8 +33,10 @@ namespace assignment3
             Array.Copy(arr.Arr(), array, arr.Arr().Length);
             var watch = Stopwatch.StartNew();
             mergeSort(array, 0, array.Length - 1);
+
             watch.Stop();
             elapsedTime = watch.ElapsedTicks * (1000000.0 / Stopwatch.Frequency);
+
             return array;
         }
 
